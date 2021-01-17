@@ -3,33 +3,19 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:store_app/componants/prod_card.dart';
 
-
 List<Product> products = [
   Product(
       imagePath: 'images/Note8.jpg',
-      price: 140,
-      colorExist: [
-        Colors.white,
-        Colors.black,
-        Colors.blue
-      ],
+      price: 0.01,
+      colorExist: [Colors.white, Colors.black, Colors.blue],
       title: 'Redmi note8 Global version 4 Gb Ram 64Gb Rom '),
   Product(
       imagePath: 'images/Note8pro.jpg',
       price: 200,
-      colorExist: [
-        Colors.white,
-        Colors.black,
-        Colors.blue
-      ],
+      colorExist: [Colors.white, Colors.black, Colors.blue],
       title: 'Redmi note 8 pro Global version 4 Gb Ram 64Gb Rom '),
-
   Product(
-      colorExist: [
-        Colors.white,
-        Colors.black,
-        Colors.blue
-      ],
+      colorExist: [Colors.white, Colors.black, Colors.blue],
       imagePath: 'images/note9.jpeg',
       price: 115.37,
       title:
