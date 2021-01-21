@@ -1,15 +1,21 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/componants/prod_card.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
+import 'package:store_app/componants/user.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:store_app/screens/profile.dart';
 class ProductDetails extends StatelessWidget {
   final Product product;
-
+  final int id=0;
   const ProductDetails({Key key, this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+   final myCollecton = firestore.collection('shoppingCart');
+   final cart = myCollecton;
+
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
@@ -49,13 +55,24 @@ class ProductDetails extends StatelessWidget {
                 iconSize: 30.0,
                 padding: EdgeInsets.only(right: 28.0),
                 icon: Icon(Icons.search),
-                onPressed: () {},
+                onPressed: () {
+                  // myCollecton.doc().get().then((value) => (DocumentSnapshot snpahot ){
+                  //   print(snpahot.exists);
+                  // });
+                },
               ),
               IconButton(
                 iconSize: 30.0,
                 padding: EdgeInsets.only(left: 28.0),
                 icon: Icon(Icons.add_shopping_cart),
-                onPressed: () {},
+                onPressed: () {
+                       myCollecton.add({
+                         'buyer': kMyUser.email,
+                         'productid': product.title,
+                       });
+                   firestore.collection('shoppingCart').doc().id ;
+
+                },
               ),
               IconButton(
                 iconSize: 30.0,

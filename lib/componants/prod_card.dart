@@ -13,8 +13,8 @@ class Product {
 }
 
 class ProductCard extends StatelessWidget {
-  Product product;
-  Function onclick;
+  final Product product;
+ final Function onclick;
   ProductCard({@required this.product, this.onclick});
 
   @override
